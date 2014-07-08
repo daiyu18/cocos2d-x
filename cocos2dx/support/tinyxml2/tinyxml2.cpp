@@ -1663,6 +1663,13 @@ XMLError XMLDocument::SaveFile( FILE* fp, bool compact )
     Print( &stream );
     return _errorID;
 }
+    
+std::string XMLDocument::SaveToString()
+{
+    XMLPrinter stream( NULL, false );
+    Print( &stream );
+    return std::string(stream.CStr());
+}
 
 
 XMLError XMLDocument::Parse( const char* p, size_t len )

@@ -43,6 +43,8 @@ distribution.
 #   include <cstdarg>
 #endif
 
+#include <string>
+
 /*
    TODO: intern strings instead of allocation.
 */
@@ -1415,6 +1417,8 @@ public:
     	an errorID.
     */
     XMLError SaveFile( FILE* fp, bool compact = false );
+    
+    std::string SaveToString();
 
     bool ProcessEntities() const		{
         return _processEntities;
